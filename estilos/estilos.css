@@ -1,0 +1,455 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+    
+}
+body{
+    background-color: white;
+    height: 100%;
+}
+.menu{
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 15vh;
+    background-color: #011126;
+    align-items: center;
+    overflow:hidden;
+}
+.menu ul{
+  padding: 10px;
+    width: 100%;
+    height: 15vh;
+
+}
+.menu li{
+    width: 20%;
+    list-style: none;
+    display: inline;
+margin-right: 2vw;
+vertical-align: middle;
+
+}
+.menu li:last-child{
+    margin-right: 0;
+}
+.menu input{
+    width: 35%;
+    height: 30px;
+    border-radius: 10px;
+}
+.menu button {
+    width: 10%;
+    height: 40px;
+    font-size:60% ;
+}
+
+#logo{
+    width: 30%;
+    height: auto;
+}
+#carrito {
+    width: 5%;
+    height: auto;
+}
+#notificacion{
+    width: 5%;
+    height: auto;
+}
+/*Hasta aca fue todo la parte del menu*/
+.selectorPaginas{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+justify-content: center;
+    background-color: #011126;
+    margin-bottom:20px;
+}
+.selectorPaginas ul{
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex ;
+}
+
+.selectorPaginas li{
+    list-style: none;
+    display: inline;
+    width: 100%;
+
+    margin: 5%;
+}
+
+.selectorPaginas button{
+    width: 100%;
+    height: 30px;
+font-weight: bold;
+font-size: 70%;
+align-items: center;
+justify-content: center;
+}
+
+/*terminamos la parte del selector de paginas*/
+.productosMasVendidos
+{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /*esto lo utilizamos para que las cosas que esten en este div sean en forma de columna uno abajo de la otra*/
+    align-items: center;
+    justify-content: center;
+    background-color: #023059;
+}
+.productosMasVendidos h1{
+text-align: center;
+color: white;
+text-decoration:solid;
+}
+
+.productos{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow:auto;
+}
+.producto{
+    margin: 10px 40px;
+    text-align: center;
+    height: 300px;
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.producto img{
+    height: 150px;
+    width: 150px;
+    margin-bottom: 20px;
+}
+.producto h2{
+    text-align: center;
+    text-decoration:underline;
+    margin-bottom: 20px;
+    font-size: 100%;
+}
+.precio{
+    align-items: center;
+   color: green;
+   font-size: 180%;
+}/*terminamos la parte de productos mas vendidos*/
+
+#tituloNuevo{
+text-align: center;
+justify-content: center;
+color: white;
+font-size: 40px;
+
+}
+.productosNuevos{
+    margin-top: 20px;
+    padding-top: 10px;
+background-color: #023059;
+display: flex;
+flex-direction: column;
+align-items: center;
+height: 40%;
+}
+.contendeorProductosNuevos{
+    width: 100%;
+}
+
+.infoDeContacto{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    display: grid;
+grid-template-areas:
+"qs ub rs"
+"qs ub rs"
+"qs ub rs";
+}
+.quienesSomos {
+    grid-area: qs;
+    margin-right: 100px;
+    height:auto ;
+width: 300px;
+padding: 10px;
+}
+.quienesSomos h2{
+padding: 10px;
+}
+#imagenFinal{
+    height: 60px;
+    margin-bottom: -20px;
+}
+.ubicacion{
+    grid-area: ub;
+    margin-right: 100px;
+}
+.ubicacion h4{
+    margin-top: 50px;
+}
+.ubicacion iframe{
+    margin-top: 50px;
+}
+.redesSociales{
+    grid-area: rs;
+    display: inline;
+    overflow: hidden;
+
+}
+.redesSociales h4{
+    margin: 30px;
+}
+.redesSociales img{
+    display: inline;
+    height: 40px;
+    margin: 10px;
+} /*terminamos el home*/
+/************************************/
+/*login*/
+.login{
+    background-color: #023059;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold ;
+}
+.contenedor{
+       font-size: 10px;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.formulario{
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    padding: 0 100px ;
+    height: 70%;
+    width: 30%;
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 10px;
+    
+    
+}
+.formulario h1{
+    font-size: 25PX;
+    margin-bottom: 10px;
+}
+.infoMail{
+    display: flex;
+    align-items:  center;
+}
+.infoMail{
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+
+
+}
+.infoMail h2
+{
+    margin-right: 15px;
+    font-size: 17px;
+    color:black;
+    width: 400px;
+}
+.infoMail p
+{
+ margin-bottom: 0;
+ margin-right: 12px;
+}
+.infoMail a{
+ margin-bottom: 0;
+ margin-right: 12px;
+}
+.infoPassword{
+    margin-bottom: 20px;
+    
+}
+.infoPassword h2{
+    font-size: 20px;
+}
+input{
+    width: 250px;
+    height: 25px;
+    border-radius: 14px;
+    font-size: 15px;
+}
+.finalDePagina{
+    display: flex;
+}
+#recordarme{
+    margin-left: -60px;
+    
+}
+.formulario img {
+    width: 200px;
+    height: 200px;
+}
+/*terminamos el login*/
+/************************************/
+/*productos*/
+.productospag{
+    background-color: #023059;
+    display: inline;
+}
+.contenedorTitulo{
+    background-color: #023059;
+    width: 100%;
+    height: 500px;
+    display: inline-block;
+    justify-items:center;
+    text-align: center;
+    margin-top: 100px;
+    }
+    .contenedorTitulo h1{
+        color: white;
+    }
+    .contenedorProductos{
+        background-color: #023059;
+        height: 400px;
+        width: 100%;
+        display:inline-block;
+        justify-content: center;
+    }
+    .filaArriba{
+        display: flex;
+    justify-content: center;
+    }
+    .filaAbajo{
+        display: flex;
+        justify-content: center;
+    }
+    .categorias{
+        text-align: center;
+        height: 150px;
+        width: 140px;
+        background-color: grey;
+        border-radius: 20px;
+        border: solid 2px;
+        margin: 5px;
+    
+    
+    
+    
+    }
+    .categorias h2{
+        margin-bottom: 50px;
+        font-size: 17px;
+    }
+    .categorias img{
+        height: 60px;
+        width: 60px;
+        margin-bottom: 20px;
+    }
+    /*terminamos el productos*/
+/************************************/
+/*pcarmadas*/
+.pcArmadas{
+    background-color: #023059;
+}
+.tituloCategoriasPC{
+width: 100%;
+height: auto;
+text-align: center;
+}
+.tituloCategoriasPC h1{
+    font-size: 40px ;
+    color: white;
+}
+.contenedorCategorias{
+    display: flex;
+    height: 40%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+.categoria{
+    background-color: grey;
+    height: 500px;
+    width: 20%;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid black 2px;
+    vertical-align: middle;
+    overflow: auto;
+}
+.imagenes{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+.categoria img{
+    border-radius: 20px;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 40px;
+}
+.categoria h2{
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+.categoria p{
+   font-weight: bold;
+}
+/*terminamos el pcArmadas*/
+/************************************/
+/*sertec*/
+.sertec{
+    background-color: #0e182a;
+}
+.bannerSerTec{
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+}
+.bannerSerTec img{
+height: 200px;
+width: 400px;
+display: flex;
+}
+.containerParrafo{
+    width: 100%;
+    height: 100%;
+    display: inline;
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+.containerParrafo h1{
+    margin: 30px;
+}
+.containerParrafo p{
+    margin: 30px;
+}
+.imagenes{
+    display: flex;
+    height: 200px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.imagenes img{
+    height: 200px;
+    width: 200px;
+    margin: 50px;
+}
