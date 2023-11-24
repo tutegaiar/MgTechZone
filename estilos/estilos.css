@@ -172,12 +172,17 @@ grid-template-areas:
 "qs ub rs"
 "qs ub rs"
 "qs ub rs";
+gap: 3%;
 }
 .quienesSomos {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     grid-area: qs;
-    margin-right: 100px;
+width: 100%;
+height: auto;
     height:auto ;
-width: 300px;
 padding: 10px;
 }
 .quienesSomos h2{
@@ -185,14 +190,18 @@ padding: 10px;
 }
 #imagenFinal{
     height: 60px;
-    margin-bottom: -20px;
 }
 .ubicacion{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
     grid-area: ub;
-    margin-right: 100px;
 }
 .ubicacion h4{
-    margin-top: 50px;
+    margin-top: -40px;
 }
 .ubicacion iframe{
     margin-top: 50px;
@@ -200,7 +209,10 @@ padding: 10px;
 .redesSociales{
     grid-area: rs;
     display: inline;
-    overflow: hidden;
+display: flex;
+flex-direction:column ;
+width: 100%;
+height: auto;
 
 }
 .redesSociales h4{
