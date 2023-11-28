@@ -85,6 +85,55 @@
     font-weight: bold;
     font-size: 70%;
     }
+    .productosMasVendidos
+{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /*esto lo utilizamos para que las cosas que esten en este div sean en forma de columna uno abajo de la otra*/
+    align-items: center;
+    justify-content: center;
+    background-color: #023059;
+}
+.productosMasVendidos h1{
+text-align: center;
+color: white;
+text-decoration:solid;
+}
+
+.productos{
+    width: 100%;
+    display: flex;
+    gap: 10%
+    justify-content: center;
+}
+.producto{
+    margin: 10px 5px;
+    text-align: center;
+    height: 150px;
+    width: 100px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.producto img{
+    border-radius:  10px; 
+    height: 60px;
+    width: 60px;
+    margin-bottom: 10px;
+}
+.producto h2{
+    text-align: center;
+    text-decoration:underline;
+    margin-bottom: 10px;
+    font-size: 50%;
+}
+.precio{
+    align-items: center;
+   color: green;
+   font-size: 90%;
+}/*terminamos la parte de productos mas vendidos*/
+
 
     .infoDeContacto{
         align-items: center;
@@ -155,4 +204,176 @@
       height: auto;
 
     }
+    .servt{
+        font-size: 100%;
+        height: max-content;
+        color: white;
+        background-color: #0e182a;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        height: 1100px;
+    grid-template-areas:
+    "bn bn bn bn"
+    "ct ct ct ct"
+    "p1 p1 p1 p1"
+    "p2 p2 p2 p2"
+    "p3 p3 p3 p3"
+    "p3 p4 p4 p4"
+    "p5 p5 p5 p5";
+    
+    }
+    .servt img{
+        height: 100px;
+        width: auto;
+        border-top-right-radius: 20%;
+        border-bottom-right-radius: 20%;
+    }
+    
+    .contenedorserTitulo{
+        grid-area: ct;
+        text-align: center;
+        justify-content: center;
+        color: white;
+    }
+    .baner{
+        grid-area: bn;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .baner img{
+        height: 25vh;
+        width: 45vw;
+    }
+    .parrafo1{
+        font-size:60%;
+        margin: 5px;
+        border-radius: 30px;
+        background-color: #15233d ;
+        grid-area: p1;
+        display: flex;
+        height: 110px;
+        align-items: center;
+        justify-content: center;
+        border: solid 5px black;
+        padding-left: 10px;
+    
+    }
+    .parrafo2{
+        font-size:60%;
+        grid-area: p2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 30px;
+        background-color: #1b2b48 ;
+        border: solid 5px black;
+        width: 100%;
+        height: auto;
+        padding-left: 10px;
+
+    }
+    .parrafo3{
+        font-size:60%;
+        grid-area: p3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        background-color: #214053 ;
+        border: solid 5px black;
+        width: 100%;
+        height: auto;
+        padding-left: 10px;
+    }
+    .parrafo3 img{
+        height: 15vh;
+    }
+    .parrafo4{
+        font-size:60%;
+        grid-area: p4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        background-color: #275861 ;
+        border: solid 5px black;
+        width: 100%;
+        height: auto;
+        padding-left: 10px;
+    }
+    .parrafo4 img{
+        height: 15vh;
+    }
+    .parrafo5{
+        font-size:60%;
+        grid-area: p5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        background-color: #2d6570 ;
+        border: solid 5px black;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }/*productos*/
+    .productospag{
+        background-color: #023059;
+        display: inline;
+    }
+    .contenedorTitulo{
+        background-color: #023059;
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        justify-items:center;
+        text-align: center;
+        margin: 20px;
+        }
+        .contenedorTitulo h1{
+            color: white;
+        }
+        .contenedorProductos{
+            background-color: #023059;
+            height: auto;
+            width: 100%;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .filaArriba{
+            display: flex;
+            flex-wrap: wrap;
+        justify-content: center;
+        }
+        .filaAbajo{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .categorias{
+            text-align: center;
+            height: 150px;
+            width: 140px;
+            background-color: grey;
+            border-radius: 20px;
+            border: solid 2px;
+            margin: 5px;
+        
+        
+        
+        
+        }
+        .categorias h2{
+            margin-bottom: 50px;
+            font-size: 17px;
+        }
+        .categorias img{
+            height: 60px;
+            width: 60px;
+            margin-bottom: 20px;
+        }
 }

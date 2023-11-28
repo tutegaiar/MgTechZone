@@ -113,12 +113,16 @@ text-decoration:solid;
 .productos{
     width: 100%;
     display: flex;
+    gap: 3%;
     justify-content: center;
     overflow:auto;
 }
 .producto{
-    margin: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;
     text-align: center;
+    align-items: center;
     height: 300px;
     width: 200px;
     background-color: white;
@@ -126,8 +130,8 @@ text-decoration:solid;
 }
 
 .producto img{
-    height: 150px;
-    width: 150px;
+    height: 130px;
+    width: 130px;
     margin-bottom: 20px;
 }
 .producto h2{
@@ -318,28 +322,31 @@ input{
 .contenedorTitulo{
     background-color: #023059;
     width: 100%;
-    height: 500px;
+    height: auto;
     display: inline-block;
     justify-items:center;
     text-align: center;
-    margin-top: 100px;
+    margin: 20px;
     }
     .contenedorTitulo h1{
         color: white;
     }
     .contenedorProductos{
         background-color: #023059;
-        height: 400px;
+        height: auto;
         width: 100%;
-        display:inline-block;
+        display:flex;
+        flex-direction: column;
         justify-content: center;
     }
     .filaArriba{
         display: flex;
+        flex-wrap: wrap;
     justify-content: center;
     }
     .filaAbajo{
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
     }
     .categorias{
@@ -381,36 +388,32 @@ text-align: center;
 }
 .contenedorCategorias{
     display: flex;
-    height: 40%;
+    flex-wrap: wrap;
+    height: auto;
     width: 100%;
     align-items: center;
     justify-content: center;
+    gap: 5%;
     
 }
-.categoria{
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     background-color: grey;
-    height: 500px;
-    width: 20%;
-    display: inline;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
+    border-top: solid 5px black;
+    color: black;
     text-align: center;
-    padding: 10px;
-    border-radius: 20px;
-    border: solid black 2px;
-    vertical-align: middle;
-    overflow: auto;
 }
-.imagenes{
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
+.card-text{
+    text-align: center;
+    color: black;
+    font-size:80%;
 }
 .categoria img{
     border-radius: 20px;
     width: 100%;
-    height: 200px;
+    height: auto;
     margin-bottom: 40px;
 }
 .categoria h2{
@@ -425,43 +428,121 @@ text-align: center;
 /*sertec*/
 .sertec{
     background-color: #0e182a;
-}
-.bannerSerTec{
-    margin-top: 50px;
     display: flex;
-    width: 100%;
-    height: 200px;
+    flex-direction: column;
+}
+
+.servt{
+    font-size: 100%;
+    height: max-content;
+    color: white;
+    background-color: #0e182a;
+    display: grid;
+    align-items: center;
     justify-content: center;
+    height: 1100px;
+grid-template-areas:
+"bn bn bn bn"
+"ct ct ct ct"
+"p1 p1 . ."
+". p2 p2 p2"
+"p3 p3 p3 ."
+". p4 p4 ."
+"p5 p5 p5 p5";
+
 }
-.bannerSerTec img{
-height: 200px;
-width: 400px;
-display: flex;
+.servt img{
+    height: 100px;
+    width: auto;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
 }
-.containerParrafo{
-    width: 100%;
-    height: 100%;
-    display: inline;
+
+.contenedorserTitulo{
+    grid-area: ct;
     text-align: center;
     justify-content: center;
     color: white;
 }
-.containerParrafo h1{
-    margin: 30px;
-}
-.containerParrafo p{
-    margin: 30px;
-}
-.imagenes{
+.baner{
+    grid-area: bn;
     display: flex;
-    height: 200px;
-    width: 100%;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
 }
-.imagenes img{
-    height: 200px;
-    width: 200px;
-    margin: 50px;
+.baner img{
+    height: 25vh;
+    width: 25vw;
 }
+.parrafo1{
+    margin: 5px;
+    border-radius: 30px;
+    background-color: #15233d ;
+    grid-area: p1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 5px black;
+    padding-left: 10px;
+
+}
+.parrafo1 img{
+    justify-items: left;
+}
+.parrafo2{
+    font-size: small;
+    grid-area: p2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #1b2b48 ;
+    border: solid 5px black;
+    width: 100%;
+    height: auto;
+    padding-left: 10px;
+}
+.parrafo3{
+    grid-area: p3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: #214053 ;
+    border: solid 5px black;
+    width: 100%;
+    height: auto;
+    padding-left: 10px;
+}
+.parrafo3 img{
+    height: 15vh;
+}
+.parrafo4{
+    grid-area: p4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: #275861 ;
+    border: solid 5px black;
+    width: 100%;
+    height: auto;
+    padding-left: 10px;
+}
+.parrafo4 img{
+    height: 15vh;
+}
+.parrafo5{
+    grid-area: p5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: #2d6570 ;
+    border: solid 5px black;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
