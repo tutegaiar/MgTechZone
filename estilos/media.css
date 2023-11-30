@@ -204,122 +204,6 @@ text-decoration:solid;
       height: auto;
 
     }
-    .servt{
-        font-size: 100%;
-        height: max-content;
-        color: white;
-        background-color: #0e182a;
-        display: grid;
-        align-items: center;
-        justify-content: center;
-        height: 1100px;
-    grid-template-areas:
-    "bn bn bn bn"
-    "ct ct ct ct"
-    "p1 p1 p1 p1"
-    "p2 p2 p2 p2"
-    "p3 p3 p3 p3"
-    "p3 p4 p4 p4"
-    "p5 p5 p5 p5";
-    
-    }
-    .servt img{
-        height: 100px;
-        width: auto;
-        border-top-right-radius: 20%;
-        border-bottom-right-radius: 20%;
-    }
-    
-    .contenedorserTitulo{
-        grid-area: ct;
-        text-align: center;
-        justify-content: center;
-        color: white;
-    }
-    .baner{
-        grid-area: bn;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .baner img{
-        height: 25vh;
-        width: 45vw;
-    }
-    .parrafo1{
-        font-size:60%;
-        margin: 5px;
-        border-radius: 30px;
-        background-color: #15233d ;
-        grid-area: p1;
-        display: flex;
-        height: 110px;
-        align-items: center;
-        justify-content: center;
-        border: solid 5px black;
-        padding-left: 10px;
-    
-    }
-    .parrafo2{
-        font-size:60%;
-        grid-area: p2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        border-radius: 30px;
-        background-color: #1b2b48 ;
-        border: solid 5px black;
-        width: 100%;
-        height: auto;
-        padding-left: 10px;
-
-    }
-    .parrafo3{
-        font-size:60%;
-        grid-area: p3;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 30px;
-        background-color: #214053 ;
-        border: solid 5px black;
-        width: 100%;
-        height: auto;
-        padding-left: 10px;
-    }
-    .parrafo3 img{
-        height: 15vh;
-    }
-    .parrafo4{
-        font-size:60%;
-        grid-area: p4;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 30px;
-        background-color: #275861 ;
-        border: solid 5px black;
-        width: 100%;
-        height: auto;
-        padding-left: 10px;
-    }
-    .parrafo4 img{
-        height: 15vh;
-    }
-    .parrafo5{
-        font-size:60%;
-        grid-area: p5;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 30px;
-        background-color: #2d6570 ;
-        border: solid 5px black;
-        width: 100%;
-        height: auto;
-        padding: 10px;
-    }/*productos*/
     .productospag{
         background-color: #023059;
         display: inline;
@@ -331,7 +215,6 @@ text-decoration:solid;
         display: inline-block;
         justify-items:center;
         text-align: center;
-        margin: 20px;
         }
         .contenedorTitulo h1{
             color: white;
@@ -375,5 +258,20 @@ text-decoration:solid;
             height: 60px;
             width: 60px;
             margin-bottom: 20px;
+        }
+        .servt{
+            font-size: 90%;
+            color: white;
+            background-color: #0e182a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            width: 100%;
+            gap: 10px;
+        }
+        .servt img{
+            width: 100px;
         }
 }
