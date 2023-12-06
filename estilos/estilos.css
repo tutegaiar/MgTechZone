@@ -214,6 +214,7 @@ padding: 10px;
     grid-area: rs;
     display: inline;
 display: flex;
+justify-content: center;
 flex-direction:column ;
 width: 100%;
 height: auto;
@@ -225,7 +226,7 @@ height: auto;
 .redesSociales img{
     display: inline;
     height: 40px;
-    margin: 10px;
+    margin: 20px;
 } /*terminamos el home*/
 /************************************/
 /*login*/
@@ -247,7 +248,7 @@ height: auto;
     align-items: center;
     padding: 0 100px ;
     height: 600px;
-    max-width: 200px;
+    max-width: 400px;
     background-color: white;
     border: 6px solid black;
     border-radius: 10px;
