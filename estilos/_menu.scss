@@ -1,0 +1,77 @@
+.menu{
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 15vh;
+  background-color: #011126;
+  align-items: center;
+  overflow:hidden;
+  ul{
+    padding: 10px;
+    width: 100%;
+    height: 15vh;
+  }
+  li{
+    width: 20%;
+    list-style: none;
+    display: inline;
+    margin-right: 2vw;
+    vertical-align: middle;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  input{
+    width: 35%;
+    height: 30px;
+    border-radius: 10px;
+  }
+  button{
+    width: 10%;
+    height: 40px;
+    font-size:60% ;
+  }
+}
+#logo{
+  width: 30%;
+  height: auto;
+}
+#carrito {
+  width: 5%;
+  height: auto;
+}
+#notificacion{
+  width: 5%;
+  height: auto;
+}
+.selectorPaginas{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+justify-content: center;
+  background-color: #011126;
+  margin-bottom:20px;
+  ul{
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex ;
+  }
+  li{
+    list-style: none;
+    display: inline;
+    width: 100%;
+    margin: 5%;
+  }
+  button{
+    width: 100%;
+    height: 30px;
+    font-weight: bold;
+    font-size: 70%;
+    align-items: center;
+    justify-content: center;
+  }
+}

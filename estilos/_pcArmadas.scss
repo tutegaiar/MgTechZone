@@ -1,0 +1,51 @@
+.pcArmadas{
+  background-color: #023059;
+}
+.tituloCategoriasPC{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  h1{
+    font-size: 40px ;
+    color: white;
+  }
+}
+.contenedorCategorias{
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  gap: 5%;
+}
+.card-body{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: grey;
+  border-top: solid 5px black;
+  color: black;
+  text-align: center;
+}
+.card-text{
+  text-align: center;
+  color: black;
+  font-size:80%;
+}
+.categoria {
+  img{
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+  }
+  h2{
+    margin-bottom: 20px;
+    text-decoration: underline;
+  }
+  p{
+    font-weight: bold;
+  }
+}

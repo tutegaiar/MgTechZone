@@ -1,0 +1,67 @@
+.infoDeContacto{
+  width: 100%;
+  height: auto;
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-areas:
+  "qs ub rs"
+  "qs ub rs"
+  "qs ub rs";
+  gap: 3%;
+}
+.quienesSomos {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-area: qs;
+  width: 100%;
+  height: auto;
+  height:auto ;
+  padding: 10px;
+  h2{
+    padding: 10px;
+  }
+}
+#imagenFinal{
+  height: 60px;
+}
+.ubicacion{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  grid-area: ub;
+  h4{
+    margin-top: -40px;
+  }
+  iframe{
+    margin-top: 50px;
+  }
+}
+.redesSociales{
+  grid-area: rs;
+  display: inline;
+  display: flex;
+  justify-content: center;
+  flex-direction:column ;
+  width: 100%;
+  height: auto;
+  h4{
+    margin: 30px;
+  }
+  img{
+    display: inline;
+    height: 40px;
+    margin: 20px;
+  }
+}
+
+
+
+
+
+

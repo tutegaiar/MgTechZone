@@ -1,0 +1,255 @@
+@media (max-width:855px)
+{
+  *{
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  }
+  .menu{
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: #011126;
+  align-items: center;
+  justify-content: center;
+  ul{
+    padding: 10px;
+    width: 100%;
+    height: auto;
+  }
+  li{
+    width: 100%;
+    list-style: none;
+    margin-right: 2vw;
+    & last-child{
+      margin-right: 0;
+    }
+  }
+  input{
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+  }
+  button {
+    width: 33%;
+    height: 40px;
+    font-size:60%;
+  }
+}
+#logo{
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+#carrito {
+  width: 30%;
+  height: auto;
+}
+#notificacion{
+  width: 30%;
+  height: auto;
+}
+.selectorPaginas{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  ul{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+  }
+  li{
+    width: 100%;
+    margin: 2%;
+  }
+  button{
+    width: 100%;
+    height: 8vh;
+    font-weight: bold;
+    font-size: 70%;
+  }
+}
+  .productosMasVendidos {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /*esto lo utilizamos para que las cosas que esten en este div sean en forma de columna uno abajo de la otra*/
+    align-items: center;
+    justify-content: center;
+    background-color: #023059
+    h1{
+      text-align: center;
+      color: white;
+      text-decoration:solid;
+    }
+  }
+  .productos{
+    width: 100%;
+    display: flex;
+    gap: 10%
+
+  }
+.producto{
+    margin: 10px 5px;
+    text-align: center;
+    height: 150px;
+    width: 100px;
+    background-color: white;
+    border-radius: 10px;
+    img{
+      border-radius:  10px; 
+      height: 60px;
+      width: 60px;
+      margin-bottom: 10px;
+    }
+    h2{
+      text-align: center;
+      text-decoration:underline;
+      margin-bottom: 10px;
+      font-size: 50%;
+    }
+  }
+  .precio{
+    align-items: center;
+   color: green;
+   font-size: 90%;
+  }
+  .infoDeContacto{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    display: grid;
+    grid-template-areas:
+    "qs"
+    "ub"
+    "rs";
+    gap: 5%;
+  }
+  .quienesSomos {
+    grid-area: qs;
+    height:auto ;
+    width: 100%;
+    h2{
+      padding: 10px;
+    }
+  }
+  #imagenFinal{
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  .ubicacion{
+    grid-area: ub;
+    h4{
+      margin-top: 50px;
+    }
+    iframe{
+      margin-top: 50px;
+    }
+  }
+  .redesSociales{
+    grid-area: rs;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    h4{
+      margin: 30px;
+    }
+    p{
+      display: flex;
+      height: auto;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    img{
+      width: 50%;
+      height: auto;
+    }
+  }
+  .productospag{
+    background-color: #023059;
+    display: inline;
+  }
+.contenedorTitulo{
+    background-color: #023059;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    justify-items:center;
+    text-align: center;
+    h1{
+      color: white;
+    }
+  }
+  .contenedorProductos{
+    background-color: #023059;
+    height: auto;
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filaArriba{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filaAbajo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .categorias{
+    text-align: center;
+    height: 150px;
+    width: 140px;
+    background-color: grey;
+    border-radius: 20px;
+    border: solid 2px;
+    margin: 5px;
+    h2{
+      margin-bottom: 50px;
+      font-size: 17px;
+    }
+    img{
+      height: 60px;
+      width: 60px;
+      margin-bottom: 20px;
+    }
+  }
+  .servt{
+    font-size: 90%;
+    color: white;
+    background-color: #0e182a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    gap: 10px;
+    .servt img{
+      width: 100px;
+    }
+  }
+}
