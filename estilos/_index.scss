@@ -17,10 +17,11 @@
   display: flex;
   gap: 3%;
   justify-content: center;
-  overflow:auto;
+  overflow:visible;
 
 }
 .producto{
+  border: solid 4px black;
   display: flex;
   flex-direction: column;
   margin: 10px 10px;
@@ -30,6 +31,11 @@
   width: 200px;
   background-color: white;
   border-radius: 10px;
+  transition: all 1s;
+  &:hover{
+    transform: scale(1.5);
+    background-color: aquamarine;
+  }
   img{
     height: 130px;
     width: 130px;

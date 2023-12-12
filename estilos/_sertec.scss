@@ -52,6 +52,12 @@
   height: auto;
   padding-left: 2%;
   border: solid black 4px;
+  @media (min-width:855px){
+    transition: all 2s;
+    &:hover{
+      transform: translatex(700px);
+    }
+  }
 
 }
 .parrafo2{
@@ -64,6 +70,12 @@
   background-color: #1b2b48 ;
   padding-left: 2%;
   border: solid black 4px;
+  @media (min-width:855px){
+   transition: all 2s;
+    &:hover{
+      transform: translatex(-400px);
+    }
+  }
 }
 .parrafo3{
   grid-area: p3;
@@ -75,6 +87,13 @@
   height: auto;
   padding-left: 2%;
   border: solid black 4px;
+  @media (min-width:855px){
+    transition: all 2s;
+    &:hover{
+      transform: translatex(350px);
+    }
+  }
+
 }
 .parrafo4{
   display: flex;
@@ -86,6 +105,12 @@
   background-color: #275861 ;
   padding-left: 2%;
   border: solid black 4px;
+  @media (min-width:855px){
+    transition: all 2s;
+    &:hover{
+      transform: translatex(-400px);
+    }
+  }
 }
 
 .parrafo5{

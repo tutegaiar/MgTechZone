@@ -107,10 +107,11 @@
   display: flex;
   gap: 3%;
   justify-content: center;
-  overflow: auto;
+  overflow: visible;
 }
 
 .producto {
+  border: solid 4px black;
   display: flex;
   flex-direction: column;
   margin: 10px 10px;
@@ -120,6 +121,11 @@
   width: 200px;
   background-color: white;
   border-radius: 10px;
+  transition: all 1s;
+}
+.producto:hover {
+  transform: scale(1.5);
+  background-color: aquamarine;
 }
 .producto img {
   height: 130px;
@@ -467,6 +473,14 @@ input {
   padding-left: 2%;
   border: solid black 4px;
 }
+@media (min-width: 855px) {
+  .parrafo1 {
+    transition: all 2s;
+  }
+  .parrafo1:hover {
+    transform: translatex(700px);
+  }
+}
 
 .parrafo2 {
   display: flex;
@@ -478,6 +492,14 @@ input {
   background-color: #1b2b48;
   padding-left: 2%;
   border: solid black 4px;
+}
+@media (min-width: 855px) {
+  .parrafo2 {
+    transition: all 2s;
+  }
+  .parrafo2:hover {
+    transform: translatex(-400px);
+  }
 }
 
 .parrafo3 {
@@ -491,6 +513,14 @@ input {
   padding-left: 2%;
   border: solid black 4px;
 }
+@media (min-width: 855px) {
+  .parrafo3 {
+    transition: all 2s;
+  }
+  .parrafo3:hover {
+    transform: translatex(350px);
+  }
+}
 
 .parrafo4 {
   display: flex;
@@ -502,6 +532,14 @@ input {
   background-color: #275861;
   padding-left: 2%;
   border: solid black 4px;
+}
+@media (min-width: 855px) {
+  .parrafo4 {
+    transition: all 2s;
+  }
+  .parrafo4:hover {
+    transform: translatex(-400px);
+  }
 }
 
 .parrafo5 {
@@ -609,17 +647,26 @@ input {
   .productos {
     width: 100%;
     display: flex;
+    align-items: center;
+    flex-direction: column;
     gap: 10%;
   }
   .producto {
     margin: 10px 5px;
     text-align: center;
     height: 150px;
-    width: 100px;
+    width: 90%;
     background-color: white;
     border-radius: 10px;
+    transition: all 1s;
+  }
+  .producto:hover {
+    transform: scale(1.25);
+    background-color: aquamarine;
   }
   .producto img {
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 10px;
     height: 60px;
     width: 60px;
@@ -629,7 +676,7 @@ input {
     text-align: center;
     text-decoration: underline;
     margin-bottom: 10px;
-    font-size: 50%;
+    font-size: 100%;
   }
   .precio {
     align-items: center;
