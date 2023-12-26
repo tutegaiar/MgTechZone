@@ -4,6 +4,14 @@
     font-family: 'Manrope', sans-serif;
     
 }
+@mixin filas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+$colorPrincipal:#023059;
+$colorSecundario:#011126;
+
 @import 'menu';
 @import 'index';
 @import 'login';

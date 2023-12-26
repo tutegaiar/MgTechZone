@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -30,6 +31,7 @@
   margin-right: 0;
 }
 .menu input {
+  text-align: center;
   width: 35%;
   height: 30px;
   border-radius: 10px;
@@ -124,7 +126,7 @@
   transition: all 1s;
 }
 .producto:hover {
-  transform: scale(1.5);
+  transform: scale(1.15);
   background-color: aquamarine;
 }
 .producto img {
@@ -139,7 +141,7 @@
   font-size: 100%;
 }
 
-precio {
+.precio {
   align-items: center;
   color: green;
   font-size: 180%;
@@ -169,7 +171,8 @@ precio {
 .login {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, #023059, #0e182a);
+  color: white;
+  background: linear-gradient(to right, #023059, #011126);
 }
 
 .contendorLogin {
@@ -186,8 +189,8 @@ precio {
   padding: 0 100px;
   height: 600px;
   max-width: 400px;
-  background-color: white;
-  border: 6px solid black;
+  background-color: black;
+  border: 3px solid white;
   border-radius: 10px;
   gap: 20px;
 }
@@ -198,43 +201,31 @@ precio {
 .formulario img {
   width: 200px;
   height: 200px;
+  border-radius: 100%;
 }
 
-.infoMail {
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  display: flex;
-  flex-direction: row;
-}
-.infoMail h2 {
-  margin-right: 15px;
-  font-size: 17px;
-  color: black;
-  width: 400px;
-}
-.infoMail p {
-  margin-bottom: 0;
-  margin-right: 12px;
-}
-.infoMail a {
-  margin-bottom: 0;
-  margin-right: 12px;
+.username input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  border-bottom: 1px solid white;
 }
 
-.infoPassword {
-  margin-bottom: 20px;
+.contraseña input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  border-bottom: 1px solid white;
 }
 
-h2 {
-  font-size: 20px;
-}
-
-input {
-  width: 250px;
-  height: 25px;
-  border-radius: 14px;
-  font-size: 15px;
+input[type=submit] {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: #023059;
+  color: white;
 }
 
 .finalDePagina {
@@ -441,7 +432,7 @@ input {
 }
 .servt img {
   height: 100px;
-  width: auto;
+  width: 40%;
   justify-items: right;
 }
 

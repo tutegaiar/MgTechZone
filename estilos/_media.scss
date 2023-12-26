@@ -12,7 +12,7 @@
   flex-direction: column;
   width: 100%;
   height: auto;
-  background-color: #011126;
+  background-color: $colorSecundario;
   align-items: center;
   justify-content: center;
   ul{
@@ -84,7 +84,7 @@
     flex-direction: column; /*esto lo utilizamos para que las cosas que esten en este div sean en forma de columna uno abajo de la otra*/
     align-items: center;
     justify-content: center;
-    background-color: #023059
+    background-color: $colorPrincipal
     h1{
       text-align: center;
       color: white;
@@ -194,11 +194,11 @@
     }
   }
   .productospag{
-    background-color: #023059;
+    background-color: $colorPrincipal;
     display: inline;
   }
 .contenedorTitulo{
-    background-color: #023059;
+    background-color: $colorPrincipal;
     width: 100%;
     height: auto;
     display: inline-block;
@@ -209,7 +209,7 @@
     }
   }
   .contenedorProductos{
-    background-color: #023059;
+    background-color: $colorPrincipal;
     height: auto;
     width: 100%;
     display:flex;
@@ -217,14 +217,10 @@
     justify-content: center;
   }
   .filaArriba{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    @include filas()
   }
   .filaAbajo{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    @include filas()
   }
   .categorias{
     text-align: center;

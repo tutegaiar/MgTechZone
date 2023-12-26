@@ -1,3 +1,4 @@
+
 .productospag{
   background-color: #023059;
   display: inline;
@@ -14,7 +15,7 @@
   }
 }
 .contenedorProductos{
-  background-color: #023059;
+  background-color: $colorPrincipal;
   height: auto;
   width: 100%;
   display:flex;
@@ -22,14 +23,10 @@
   justify-content: center;
 }
 .filaArriba{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  @include filas()
 }
 .filaAbajo{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  @include filas()
 }
 .categorias{
   text-align: center;
