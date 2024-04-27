@@ -31,10 +31,10 @@
   margin-right: 0;
 }
 .menu input {
-  text-align: center;
   width: 35%;
   height: 30px;
   border-radius: 10px;
+  text-align: center;
 }
 .menu button {
   width: 10%;
@@ -48,12 +48,12 @@
 }
 
 #carrito {
-  width: 5%;
+  width: 3%;
   height: auto;
 }
 
 #notificacion {
-  width: 5%;
+  width: 3%;
   height: auto;
 }
 
@@ -591,12 +591,13 @@ input[type=submit] {
     margin-bottom: 20px;
   }
   #carrito {
-    width: 30%;
+    width: 20%;
     height: auto;
   }
   #notificacion {
-    width: 30%;
+    width: 20%;
     height: auto;
+    margin: 30px;
   }
   .selectorPaginas {
     display: flex;
