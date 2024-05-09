@@ -27,18 +27,15 @@
   margin: 10px 10px;
   text-align: center;
   align-items: center;
+  justify-content: space-between;
   height: 300px;
   width: 200px;
   background-color: white;
   border-radius: 10px;
   transition: all 1s;
-  &:hover{
-    transform: scale(1.15);
-    background-color: aquamarine;
-  }
   img{
-    height: 130px;
-    width: 130px;
+    height: 100px;
+    width: 100px;
     margin-bottom: 20px;
   }
   h2{
@@ -46,6 +43,20 @@
   text-decoration:underline;
   margin-bottom: 20px;
   font-size: 100%;
+  }
+  button{
+    color: white;
+    padding-bottom:2px ;
+    border-bottom: none;
+    border-left: none;
+    border-right:none; 
+    width: 100%;
+    border-bottom-left-radius: auto; 
+    border-bottom-right-radius: auto;
+    background-color: $colorSecundario;
+    &:hover{
+      background-color: grey;
+    }
   }
 }
 .precio{

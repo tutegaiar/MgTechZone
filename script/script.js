@@ -27,6 +27,19 @@ agregarProducto(producto) {
 calcularTotal(){
   return this.productos.reduce((total,producto)=>total + producto.precio,0);
 }
+//funcion que todavia no implemente pero eliminaria de a uno los productos
+eliminarProducto(nombreProducto){
+  this.productos=this.productos.filter(producto=>producto.nombre!==nombreProducto);
+  localStorage.setItem('productos',JSON.stringify(this.productos));
+}
+//la funcion que contiene el problema...
+vaciarCarrito(){
+    this.productos = [];
+    localStorage.removeItem("productos");
+    this.imprimirProductos();
+    location.reload(); // Encontre esta funcion que me actualiza el dom 
+
+  }
 // esta siguiente funcion imprime los productos y cuando hay porductos en el carrito crea los botones de eliminar todos los productos, creo que ahi esta el problema de mi codigo
 imprimirProductos(){
   if (localStorage.getItem('productos') !== null) {
@@ -42,6 +55,9 @@ imprimirProductos(){
     nuevoBoton.id="eliminarCarritoBoton";
     nuevoBoton.textContent="Eliminar productos del carrito";
     mostrarProductos.appendChild(nuevoBoton);
+    nuevoBoton.addEventListener("click",()=>{
+      this.vaciarCarrito();
+    })
 
     //este segundo boton el el que se crea a donde se va a poner el total del carrito pero es en otro contenedor
     let mostrarTotal=document.querySelector(".resumenDeCompra")
@@ -50,23 +66,13 @@ imprimirProductos(){
   nuevoTotal.textContent=`El total del carrito es $${this.calcularTotal()}`;
   mostrarTotal.appendChild(nuevoTotal);
   let botonComprar = document.createElement("button")
+    botonComprar.id="botonComprar";
     botonComprar.textContent="Finalizar Compra";
     mostrarTotal.appendChild(botonComprar);
   }
 }
 
-//funcion que todavia no implemente pero eliminaria de a uno los productos
-eliminarProducto(nombreProducto){
-  this.productos=this.productos.filter(producto=>producto.nombre!==nombreProducto);
-  localStorage.setItem('productos',JSON.stringify(this.productos));
-}
-//la funcion que contiene el problema...
-vaciarCarrito(){
-  this.productos=[];
-  localStorage.removeItem('productos');
-  
-  
- }
+
 }
 
 //introducimos las variables con cada uno de los productos (no se si esta bien armar 1 producto pot variable)
@@ -79,20 +85,41 @@ let ram=new producto("Memoria 16gb 2300mhz",40000,20);
 //creamos el carrito
 const carrito = new Carrito();
 //agregamos el evento para agregar al carrito
-const botonAgregar= document.getElementById("producto1");
-if(botonAgregar){
-  botonAgregar.addEventListener("click",()=>{
+const botonAgregarNotebook = document.querySelector("#producto1", ".AgregarAlCarrito");
+if(botonAgregarNotebook){
+  botonAgregarNotebook.addEventListener("click",()=>{
     carrito.agregarProducto(notebook);
   
   })
 }
-// y agregamos el evento para eliminar todo el carrito
-const vaciarCarritoBoton = document.getElementById("eliminarCarritoBoton");
-if (vaciarCarritoBoton) {
-  vaciarCarritoBoton.addEventListener("click", () => {
-    console.log("Eliminando todos los productos...");
-    carrito.vaciarCarrito();
-  });
+const botonAgregarProcesador  = document.querySelector("#producto2", ".AgregarAlCarrito");
+if(botonAgregarProcesador ){
+  botonAgregarProcesador.addEventListener("click",()=>{
+    carrito.agregarProducto(procesador);
+  
+  })
+}
+const botonAgregarMother = document.querySelector("#producto3", ".agregarAlCarrito");
+if(botonAgregarMother){
+  botonAgregarMother.addEventListener("click",()=>{
+    carrito.agregarProducto(mother);
+  
+  })
+}
+const botonAgregarMouse = document.querySelector("#producto4", ".agregarAlCarrito");
+if(botonAgregarMouse){
+  botonAgregarMouse.addEventListener("click",()=>{
+    carrito.agregarProducto(mouse);
+  
+  })
+}
+
+const botonAgregarRam = document.querySelector("#producto5", ".agregarAlCarrito");
+if(botonAgregarRam){
+  botonAgregarRam.addEventListener("click",()=>{
+    carrito.agregarProducto(ram);
+  
+  })
 }
 
 //imprimimos el contenido del carrito que puede ser vacio
