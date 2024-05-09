@@ -1,38 +1,4 @@
-
-let carrito=[];
-indiceCarrito=0;
-function buscarProducto(productos,nombre){
-  return productos.find((el)=>el.nombre===nombre.toUpperCase())
-};
-let entrada=0;
-let respuesta="";
-
-function filtrarProductos(productos,precio){
-  return productos.filter((el)=>el.precio<=precio)
-};
-function eliminarProductoDelCarrito(carrito, productos) {
-  if (carrito.length === 0) {
-      alert("El carrito está vacío.");
-      return;
-  }
-  // Preguntamos al usuario si desea eliminar el último producto del carrito
-  let respuesta = prompt("¿Desea eliminar el último producto del carrito? (si/no)");
-  if (respuesta == "si") {
-      // Obtenemos el último producto del carrito y lo buscamos en la lista de los productos originales
-      let productoAEliminar = carrito[carrito.length - 1];
-      let productoOriginal = buscarProducto(productos, productoAEliminar.nombre);
-      
-      productoOriginal.cantidad++;
-      carrito.pop();
-      alert("Producto eliminado del carrito: " + productoAEliminar.nombre);
-  }
-};
-//utilizo la siguiente funcion para pasar on objeto a una cadena de texto ya que con alert no lo puedo mostrar
-function objetoACadena(filtrarProductos){
-  return `Nombre: ${filtrarProductos.nombre}, Precio: $${filtrarProductos.precio}, stock: ${filtrarProductos.cantidad} ` 
-}
-
-/*creamos la clase para contruir los productos */
+//Creamos la clase del producto
 class producto{
   constructor (nombre,precio,cantidad){
     this.nombre=nombre.toUpperCase();
@@ -40,64 +6,94 @@ class producto{
     this.cantidad=parseInt(cantidad);
   }
 }
-/*ingresamos los productos a la base da datos */
-let productos=[];
-productos.push (new producto("notebook lenovo",331735,5));
-productos.push (new producto("amd ryzen 7 5700g",300000,3));
-productos.push (new producto("Mother mpg b550 gaming",267000,0));
-productos.push (new producto("mouse g pro superlight blanco",130000,10));
-productos.push (new producto("Memoria 16gb 2300mhz",40000,20));
+//creamos la clase carrito y sus respectivas funciones
+class Carrito{
+  constructor(){
+    this.productos=JSON.parse(localStorage.getItem('productos'))||[];
+  }
+//funcion para agregar prodcutos
+agregarProducto(producto) {
+  if(producto!=null){
+    this.productos.push(producto);
+    
+    //se actualiza el localstorage
+    localStorage.setItem('productos',JSON.stringify(this.productos));
+    const eliminar = document.getElementsByClassName("mostrarProductos");
+    eliminar.innerHTML="";
+  }
 
+}
+//esta funcion nos sirve para calcular el total
+calcularTotal(){
+  return this.productos.reduce((total,producto)=>total + producto.precio,0);
+}
+// esta siguiente funcion imprime los productos y cuando hay porductos en el carrito crea los botones de eliminar todos los productos, creo que ahi esta el problema de mi codigo
+imprimirProductos(){
+  if (localStorage.getItem('productos') !== null) {
+    const mostrarProductos = document.querySelector(".mostrarProductos");
+    mostrarProductos.innerHTML = " "; // Limpiamos el contenido previo del contenedor
+    this.productos.forEach(producto => {
+      // Creamos un nuevo elemento de párrafo para cada producto y lo agregamos al contenedor
+      const nuevoProducto = document.createElement("p");
+      nuevoProducto.textContent = `${producto.nombre} - Precio: $${producto.precio}`;
+      mostrarProductos.appendChild(nuevoProducto);
+    })
+    let nuevoBoton = document.createElement("button")
+    nuevoBoton.id="eliminarCarritoBoton";
+    nuevoBoton.textContent="Eliminar productos del carrito";
+    mostrarProductos.appendChild(nuevoBoton);
 
-do {
-    entrada = parseInt(prompt("Bienvenido al carrito de MG TECH ZONE\n1- INGRESAR UN PRODUCTO\n2- ELIMINAR UN PRODUCTO\n3- FILTRAR POR PRECIO\n4- VISTA PREVIA DEL CARRITO\nIngrese una opción (0 para salir)"));
+    //este segundo boton el el que se crea a donde se va a poner el total del carrito pero es en otro contenedor
+    let mostrarTotal=document.querySelector(".resumenDeCompra")
+  mostrarTotal.innerHTML=" ";
+  let nuevoTotal=document.createElement("p");
+  nuevoTotal.textContent=`El total del carrito es $${this.calcularTotal()}`;
+  mostrarTotal.appendChild(nuevoTotal);
+  let botonComprar = document.createElement("button")
+    botonComprar.textContent="Finalizar Compra";
+    mostrarTotal.appendChild(botonComprar);
+  }
+}
 
-    switch (entrada) {
-        case 1:
-          alert ("Agregar un producto")
-            let ingresarProducto = buscarProducto(productos,prompt("ingrese el nombre del producto"));
-            if(ingresarProducto.nombre!=undefined){
-             if(ingresarProducto.cantidad>0){
-              carrito.push(ingresarProducto);
-              ingresarProducto.cantidad--;
-             }
-             else{
-              alert("No hay mas stock de " + ingresarProducto.nombre);
-             }
-          }
-          else{
-              alert("No existe este producto");
-          }
-            break;
-            case 2:
-              alert("Eliminar un producto");
-              eliminarProductoDelCarrito(carrito, productos);
-              break;
+//funcion que todavia no implemente pero eliminaria de a uno los productos
+eliminarProducto(nombreProducto){
+  this.productos=this.productos.filter(producto=>producto.nombre!==nombreProducto);
+  localStorage.setItem('productos',JSON.stringify(this.productos));
+}
+//la funcion que contiene el problema...
+vaciarCarrito(){
+  this.productos=[];
+  localStorage.removeItem('productos');
+  
+  
+ }
+}
 
-        case 3:
-          alert("FILTRO DE PRODUCTOS");
-                let filtrar=filtrarProductos(productos,prompt("ELIJA EL PRECIO MAXIMO DE LOS PRODUCTOS QUE DESEA VER"));
-                console.log(filtrar);
-                let mensajes = filtrar.map(objetoACadena);
-  let mensajeFinal = mensajes.join("\n");
-  alert("Productos:\n" + mensajeFinal);
+//introducimos las variables con cada uno de los productos (no se si esta bien armar 1 producto pot variable)
+let notebook=new producto("notebook lenovo",331735,5);
+let procesador=new producto("amd ryzen 7 5700g",300000,3);
+let mother= new producto("Mother mpg b550 gaming",267000,0);
+let mouse= new producto("mouse g pro superlight blanco",130000,10);
+let ram=new producto("Memoria 16gb 2300mhz",40000,20);
 
-          
-            break;
-        case 4:
-          let acumuladorCarrito=0;
-          carrito.forEach(producto => {
-            alert(`Producto: ${producto.nombre} | Precio: $${producto.precio}`);
-            acumuladorCarrito += producto.precio;
-        });
-        alert(`El precio total del carrito es: $${acumuladorCarrito}`)
+//creamos el carrito
+const carrito = new Carrito();
+//agregamos el evento para agregar al carrito
+const botonAgregar= document.getElementById("producto1");
+if(botonAgregar){
+  botonAgregar.addEventListener("click",()=>{
+    carrito.agregarProducto(notebook);
+  
+  })
+}
+// y agregamos el evento para eliminar todo el carrito
+const vaciarCarritoBoton = document.getElementById("eliminarCarritoBoton");
+if (vaciarCarritoBoton) {
+  vaciarCarritoBoton.addEventListener("click", () => {
+    console.log("Eliminando todos los productos...");
+    carrito.vaciarCarrito();
+  });
+}
 
-            break;
-        default:
-            if (entrada !== 0) {
-                alert("Opcion no valida. Por favor, seleccione una opcion valida.");
-            }
-    }
-} while (entrada !== 0);
-carrito.forEach(carrito => {console.log("Producto:", carrito.nombre, "| Precio:", carrito.precio);} );
-console.log(productos);
+//imprimimos el contenido del carrito que puede ser vacio
+carrito.imprimirProductos();

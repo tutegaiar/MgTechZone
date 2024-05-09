@@ -64,7 +64,6 @@
   align-items: center;
   justify-content: center;
   background-color: #011126;
-  margin-bottom: 20px;
 }
 .selectorPaginas ul {
   width: 100%;
@@ -802,4 +801,58 @@ input[type=submit] {
   .servt .servt img {
     width: 100px;
   }
+}
+.carritoContenedor {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 400px;
+  background-color: white;
+  gap: 2%;
+  padding: 3%;
+}
+.carritoContenedor .mostrarProductos {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(175, 175, 175);
+  align-items: center;
+  justify-content: space-between;
+  gap: 4%;
+  padding: 2%;
+  color: black;
+}
+.carritoContenedor .mostrarProductos img {
+  display: flex;
+  width: 20%;
+}
+.carritoContenedor .mostrarProductos h2 {
+  color: black;
+  font-size: 150%;
+  font-weight: bold;
+}
+.carritoContenedor .mostrarProductos button {
+  text-decoration: none;
+  font-weight: bold;
+  width: 70%;
+  height: 15%;
+  border-radius: 5%;
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  color: inherit;
+}
+.carritoContenedor .resumenDeCompra {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 50%;
+  height: 50%;
+  background-color: rgb(175, 175, 175);
+  align-items: center;
+  gap: 5%;
+  color: black;
+  padding: 2%;
 }/*# sourceMappingURL=main.css.map */
