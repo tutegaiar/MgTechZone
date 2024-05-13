@@ -15,6 +15,9 @@ class Carrito {
   agregarProducto(producto) {
     if (producto != null) {
       this.productos.push(producto);
+      let notificacionCarrito = document.querySelector(".puntoRojo"); 
+      notificacionCarrito.style.setProperty("visibility", "visible");
+   
 
       //se actualiza el localstorage
       localStorage.setItem('productos', JSON.stringify(this.productos));
@@ -107,6 +110,8 @@ const carrito = new Carrito();
 function clikearBoton(boton, producto) {
   if (boton) {
     boton.addEventListener("click", () => {
+      let contadorProductosNotificacion = document.querySelector(".puntoRojo");
+      contadorProductosNotificacion.innerHTML = `${carrito.productos.length+1}`;
       if (producto.cantidad > 0) {
         carrito.agregarProducto(producto);
         Swal.fire({
