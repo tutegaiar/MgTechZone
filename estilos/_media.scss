@@ -27,6 +27,13 @@
     & last-child{
       margin-right: 0;
     }
+    .puntoRojo{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      right: 13%;
+      top: 35%
+    }
   }
   input{
     width: 100%;
