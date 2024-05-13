@@ -110,9 +110,9 @@ const carrito = new Carrito();
 function clikearBoton(boton, producto) {
   if (boton) {
     boton.addEventListener("click", () => {
-      let contadorProductosNotificacion = document.querySelector(".puntoRojo");
-      contadorProductosNotificacion.innerHTML = `${carrito.productos.length+1}`;
       if (producto.cantidad > 0) {
+        let contadorProductosNotificacion = document.querySelector(".puntoRojo");
+        contadorProductosNotificacion.innerHTML = `${carrito.productos.length+1}`;
         carrito.agregarProducto(producto);
         Swal.fire({
           position: "top-start",
