@@ -1,0 +1,27 @@
+[
+    {
+      "nombre": "notebook lenovo",
+      "precio": 331735,
+      "cantidad": 5
+    },
+    {
+      "nombre": "amd ryzen 7 5700g",
+      "precio": 300000,
+      "cantidad": 3
+    },
+    {
+      "nombre": "Mother mpg b550 gaming",
+      "precio": 267000,
+      "cantidad": 0
+    },
+    {
+      "nombre": "mouse g pro superlight blanco",
+      "precio": 130000,
+      "cantidad": 10
+    },
+    {
+      "nombre": "Memoria 16gb 2300mhz",
+      "precio": 40000,
+      "cantidad": 20
+    }
+  ]

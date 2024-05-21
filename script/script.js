@@ -1,9 +1,10 @@
 //Creamos la clase del producto
 class producto {
-  constructor(nombre, precio, cantidad) {
+  constructor(nombre, precio, cantidad, foto) {
     this.nombre = nombre.toUpperCase();
     this.precio = precio;
     this.cantidad = parseInt(cantidad);
+    this.foto = foto;
   }
 }
 //creamos la clase carrito y sus respectivas funciones
@@ -58,7 +59,7 @@ class Carrito {
         nuevoProductoContenedor.className = "productoContainer";
         const nuevoProducto = document.createElement("p");
         nuevoProducto.id = "produc";
-        nuevoProducto.textContent = `${producto.nombre} - Precio: $${producto.precio}`;
+        nuevoProducto.textContent = `${producto.foto} ${producto.nombre} - Precio: $${producto.precio}`;
         const imagenBasura = document.createElement("img");
         imagenBasura.id = "basura";
         imagenBasura.src = "../imagenes/compartimiento.png";
@@ -94,16 +95,22 @@ class Carrito {
     }
   }
 
-
 }
+async function cargarProductos() {
+  const response = await fetch("../script/productos.json");
+  const data = await response.json();
+  const productos = data.map(item => new producto(item.nombre, item.precio, item.cantidad));
+  let notebook = productos[0];
+  let procesador = productos[1];
+  let mother = productos[2];
+  let mouse = productos[3];
+  let ram = productos[4];
+  return { notebook, procesador, mother, mouse, ram };  
+}
+;
+cargarProductos()
 
-//introducimos las variables con cada uno de los productos (no se si esta bien armar 1 producto po variable)
-let notebook = new producto("notebook lenovo", 331735, 5);
-let procesador = new producto("amd ryzen 7 5700g", 300000, 3);
-let mother = new producto("Mother mpg b550 gaming", 267000, 0);
-let mouse = new producto("mouse g pro superlight blanco", 130000, 10);
-let ram = new producto("Memoria 16gb 2300mhz", 40000, 20);
-
+console.log(notebook);
 //creamos el carrito
 const carrito = new Carrito();
 //creamos una funcion para el evento click que aparte trae las alertas de sweetalert2
@@ -152,3 +159,4 @@ const botonAgregarRam = document.querySelector("#producto5", ".agregarAlCarrito"
 clikearBoton(botonAgregarRam, ram);
 //imprimimos el contenido del carrito que puede ser vacio
 carrito.imprimirProductos();
+
