@@ -98,8 +98,8 @@ class Carrito {
 }
 // Despues de varios intentos pude dejar el programa funcional pero lo que no se si esta bien es que todo me quede adentro de la funcion 
 //traer data... no pude encontrar una forma de sacar las variables del ambito local para poder usarlas afuera
-function traerData() {
-  return fetch("./productos.json")
+async function traerData() {
+  return fetch("../script/productos.json")
     .then(response => response.json())
     .then(data => {
       return data;
