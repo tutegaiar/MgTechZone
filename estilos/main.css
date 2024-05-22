@@ -882,13 +882,17 @@ input[type=submit] {
   gap: 3%;
   padding: 2%;
 }
+.carritoContenedor .mostrarProductos .productoContainer #imagenCarrito {
+  display: flex;
+  width: 5%;
+}
 .carritoContenedor .mostrarProductos .productoContainer #produc {
   font-size: 100%;
   display: flex;
   align-items: center;
   margin-top: 3%;
 }
-.carritoContenedor .mostrarProductos .productoContainer img {
+.carritoContenedor .mostrarProductos .productoContainer #basura {
   display: flex;
   width: 5%;
   align-items: center;

@@ -45,13 +45,17 @@
         justify-content: center;
         gap: 3%;
         padding: 2%;
+        #imagenCarrito{
+            display: flex;
+            width: 5%;
+        }
         #produc{
             font-size: 100%;
             display: flex;
            align-items: center;
            margin-top: 3%;
         }
-        img{
+        #basura{
             display: flex;
             width: 5%;
             align-items: center;

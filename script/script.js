@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 //Creamos la clase del producto
 class producto {
   constructor(nombre, precio, cantidad, foto) {
@@ -57,9 +58,13 @@ class Carrito {
         // Creamos un nuevo elemento de párrafo para cada producto y lo agregamos al contenedor
         const nuevoProductoContenedor = document.createElement("div");
         nuevoProductoContenedor.className = "productoContainer";
+        const imagenCarrito = document.createElement("img");
+        imagenCarrito.id = "carritoImg";
+        imagenCarrito.src = producto.foto;
+        imagenCarrito.alt = "producto";
         const nuevoProducto = document.createElement("p");
         nuevoProducto.id = "produc";
-        nuevoProducto.textContent = `${producto.foto} ${producto.nombre} - Precio: $${producto.precio}`;
+        nuevoProducto.textContent = `${producto.nombre} - Precio: $${producto.precio}`;
         const imagenBasura = document.createElement("img");
         imagenBasura.id = "basura";
         imagenBasura.src = "../imagenes/compartimiento.png";
@@ -70,6 +75,8 @@ class Carrito {
           this.eliminarProducto(indiceProducto);
           this.imprimirProductos();
         });
+
+        nuevoProductoContenedor.appendChild(imagenCarrito);
         nuevoProductoContenedor.appendChild(nuevoProducto);
         nuevoProductoContenedor.appendChild(imagenBasura);
         mostrarProductos.appendChild(nuevoProductoContenedor);
@@ -118,7 +125,7 @@ async function traerData() {
 }
 
 traerData().then(data => {
-  let productos = data.map(item => new producto(item.nombre, item.precio, item.cantidad));
+  let productos = data.map(item => new producto(item.nombre, item.precio, item.cantidad, item.foto));
 let notebook = productos[0];
 let procesador = productos[1];
 let mother = productos[2];
@@ -172,6 +179,7 @@ const botonAgregarRam = document.querySelector("#producto5", ".agregarAlCarrito"
 clikearBoton(botonAgregarRam, ram);
 //imprimimos el contenido del carrito que puede ser vacio
 carrito.imprimirProductos();
+}
 
-
+);
 });
