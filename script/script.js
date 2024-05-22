@@ -96,14 +96,25 @@ class Carrito {
   }
 
 }
+//esta funcion me permite obtener la ruta del json basandose en
+// la ubicaciona ctual del html
+function obtenerRutaJson() {
+  const path = window.location.pathname;
+  if (path.includes('carrito.html')) {
+    return '../data/productos.json';
+  }
+  return './data/productos.json';
+}
 // Despues de varios intentos pude dejar el programa funcional pero lo que no se si esta bien es que todo me quede adentro de la funcion 
 //traer data... no pude encontrar una forma de sacar las variables del ambito local para poder usarlas afuera
 async function traerData() {
-  return fetch("./data/productos.json") && fetch("../data/productos.json")
+  let rutaJson = obtenerRutaJson();
+  return fetch(rutaJson)
     .then(response => response.json())
     .then(data => {
       return data;
     });
+    
 }
 
 traerData().then(data => {
