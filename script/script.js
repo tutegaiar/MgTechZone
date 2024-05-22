@@ -96,21 +96,23 @@ class Carrito {
   }
 
 }
-async function cargarProductos() {
-  const response = await fetch("../script/productos.json");
-  const data = await response.json();
-  const productos = data.map(item => new producto(item.nombre, item.precio, item.cantidad));
-  let notebook = productos[0];
-  let procesador = productos[1];
-  let mother = productos[2];
-  let mouse = productos[3];
-  let ram = productos[4];
-  return { notebook, procesador, mother, mouse, ram };  
+// Despues de varios intentos pude dejar el programa funcional pero lo que no se si esta bien es que todo me quede adentro de la funcion 
+//traer data... no pude encontrar una forma de sacar las variables del ambito local para poder usarlas afuera
+function traerData() {
+  return fetch("../script/productos.json")
+    .then(response => response.json())
+    .then(data => {
+      return data;
+    });
 }
-;
-cargarProductos()
 
-console.log(notebook);
+traerData().then(data => {
+  let productos = data.map(item => new producto(item.nombre, item.precio, item.cantidad));
+let notebook = productos[0];
+let procesador = productos[1];
+let mother = productos[2];
+let mouse = productos[3];
+let ram = productos[4];
 //creamos el carrito
 const carrito = new Carrito();
 //creamos una funcion para el evento click que aparte trae las alertas de sweetalert2
@@ -160,3 +162,5 @@ clikearBoton(botonAgregarRam, ram);
 //imprimimos el contenido del carrito que puede ser vacio
 carrito.imprimirProductos();
 
+
+});
