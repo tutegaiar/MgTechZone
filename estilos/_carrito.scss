@@ -38,16 +38,20 @@
             color:inherit;
         }
     .productoContainer{
+        border-radius: 5px;
+        background-color: white;
+        border: solid 2px black;
         display: flex;
         flex-direction: row;
         width: 100%;
         align-items: center;
         justify-content: center;
         gap: 3%;
-        padding: 2%;
-        #imagenCarrito{
+        margin: 3%;
+        padding: 5;
+        #carritoImg{
             display: flex;
-            width: 5%;
+            width: 10%;
         }
         #produc{
             font-size: 100%;

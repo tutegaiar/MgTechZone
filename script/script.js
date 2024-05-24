@@ -49,6 +49,35 @@ class Carrito {
     location.reload(); // Encontre esta funcion que me actualiza el dom 
 
   }
+   finalizarCompra() {
+    {
+      Swal.fire({
+        title: "Estas seguro de que deseas finalizar la compra",
+        text: "al cliquear en el boton se confirmara la compra de todos los productos del carrito",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, deseo finalizar la compra",
+        cancelbuttontext: "No, deseo seguir agregando cosas al carrito"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Confirmado!",
+            text: "has confirmado la compra de los productos",
+            icon: "success",
+            backdrop: "true",
+          })
+          let botonConfirmar = document.querySelector(".swal2-confirm");
+          botonConfirmar.addEventListener("click", () => {
+              this.vaciarCarrito();
+          });
+        }
+      });
+      
+    }
+  
+  }
   // esta siguiente funcion imprime los productos y cuando hay porductos en el carrito crea los botones de eliminar todos los productos
   imprimirProductos() {
     if (localStorage.getItem('productos') !== null) {
@@ -99,6 +128,11 @@ class Carrito {
       botonComprar.id = "botonComprar";
       botonComprar.textContent = "Finalizar Compra";
       mostrarTotal.appendChild(botonComprar);
+      botonComprar.addEventListener("click", () => {
+        this.finalizarCompra();
+   
+
+      })
     }
   }
 

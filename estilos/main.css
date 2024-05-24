@@ -874,17 +874,21 @@ input[type=submit] {
   color: inherit;
 }
 .carritoContenedor .mostrarProductos .productoContainer {
+  border-radius: 5px;
+  background-color: white;
+  border: solid 2px black;
   display: flex;
   flex-direction: row;
   width: 100%;
   align-items: center;
   justify-content: center;
   gap: 3%;
-  padding: 2%;
+  margin: 3%;
+  padding: 5;
 }
-.carritoContenedor .mostrarProductos .productoContainer #imagenCarrito {
+.carritoContenedor .mostrarProductos .productoContainer #carritoImg {
   display: flex;
-  width: 5%;
+  width: 10%;
 }
 .carritoContenedor .mostrarProductos .productoContainer #produc {
   font-size: 100%;
